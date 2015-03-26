@@ -15,7 +15,7 @@ diffutils texinfo flex guile-2.0-dev autogen tcl expect dejagnu gperf gettext au
 libreadline6 libreadline6-dev libc6-dev-i386 \
 gauche bison
 
-RUN cd /etc; git clone https://github.com/yutopp/torigoya_package_scripts.git package_scripts
+RUN cd /etc; git clone -b develop https://github.com/wx257osn2/torigoya_package_scripts.git package_scripts
 
 RUN gem install thin bundler fpm --no-rdoc --no-ri
 
