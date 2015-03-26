@@ -23,5 +23,4 @@ sudo docker run \
     -v $cwd/tmp:/etc/tmp \
     --name torigoya_factory \
     --detach=true \
-    --lxc-conf="lxc.cgroup.cpuset.cpus = 0,1,2,3,4,5,6,7" \
     torigoya/factory

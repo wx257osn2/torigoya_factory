@@ -78,7 +78,7 @@ module Torigoya
       end
 
       def pull_package_list
-        message = `cd #{Shellwords.escape @config.package_scripts_path} && git pull origin master`
+        message = `cd #{Shellwords.escape @config.package_scripts_path} && git pull origin develop`
         succeeded = $?.exitstatus == 0
 
         return succeeded, message

@@ -3,7 +3,7 @@
       <h1>Installers</h1>
       <%= @builder.platform_package_script_dir() %><br>
       <%= @builder.package_list_revision %>
-      <a href="/pull_package_list">git pull origin master</a>
+      <a href="/pull_package_list">git pull origin develop</a>
       <ul>
           <% @builder.installers.each do |name| %>
               <li>
