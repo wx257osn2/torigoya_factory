@@ -263,8 +263,11 @@ end
 get '/packaging_and_install/*' do |name|
   if login?
     begin
-      reuse? = (name[name.length-6, 6] == "/reuse")
-      status = install(name[0 .. name.length - (reuse? ? 6 : 0)], reuse?)
+      if name[name.length-6, 6] == "/reuse"
+        status = install(name[0, name.length-6], true)
+      else
+        status = install(name, false)
+      end
 
       stream_status(status)
 
@@ -285,8 +288,11 @@ end
 get '/packaging_and_install_lazy/*' do |name|
   if login?
     begin
-      reuse? = (name[name.length-6, 6] == "/reuse")
-      add_to_install_task(name[0 .. name.length - (reuse? ? 6 : 0)], reuse?)
+      if name[name.length-6, 6] == "/reuse"
+        add_to_install_task(name[0, name.length-6], true)
+      else
+        add_to_install_task(name, false)
+      end
 
       redirect '/'
 
