@@ -192,6 +192,7 @@ module Torigoya
         glob_p = "#{Shellwords.escape sd}/**/*.#{@platform_config[:ext]}"
         packages_list = Dir::glob(glob_p)
                         .select {|f| (File.basename f)[0] != '_'}
+                        .map {|f| f[sd.length+1..f.length]}
 
         return packages_list.sort!
       end
