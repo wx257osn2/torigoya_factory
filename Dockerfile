@@ -23,6 +23,7 @@ ADD nginx.conf /etc/nginx/nginx.conf
 
 ADD app /etc/app
 ADD config.in_docker.yml /etc/app/config.yml
+ADD ../torigoya_proc_profiles /etc/proc_profiles
 RUN cd /etc/app; bundle update
 
 EXPOSE 80
